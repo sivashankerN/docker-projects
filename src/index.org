@@ -1,0 +1,11 @@
+* Introduction
+  Contains docker related stuff. Like to rebuild virtual-labs cluster
+  setup using docker
+* What i did  
+  - Installed VirtualBox5.1 on host machine
+  - Installed CentOS-7 minimal version
+  - Ran dhclient -v ( to get Internet)
+  - Installed iputils
+  - Installed emacs-nox ( No GUI)
+ 
+
