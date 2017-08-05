@@ -1,11 +1,50 @@
 * Introduction
   Contains docker related stuff. Like to rebuild virtual-labs cluster
   setup using docker
+ 
+* Enable ssh from host machine to get guest OS
+  1. Stop the running Guest OS
+  2. Settings-->Network-->Advanced-->Port Forwarding
+  3. Add rule
+     #+BEGIN_EXAMPLE
+     Name : Rule1 ( anything)
+     Protocal: tcp
+     Host IP: (Leave blank for host machine)
+     Host Port: 2222
+     Guest IP: ( leave blan for guest/localhost)
+     Guest Port: 22
+     #+END_EXAMPLE
+  4. Start Guest OS
+  5. Run
+     #+BEGIN_EXAMPLE
+     dhclient -v
+     #+END_EXAMPLE
+  6. Run following command from host
+     #+BEGIN_EXAMPLE
+     ssh -p2222 root@localhost
+     #+END_EXAMPLE
 * What i did  
   - Installed VirtualBox5.1 on host machine
   - Installed CentOS-7 minimal version
   - Ran dhclient -v ( to get Internet)
   - Installed iputils
   - Installed emacs-nox ( No GUI)
- 
-
+** Install Docker CE ( Docker Community Edition)  
+*** Install using the repositroy
+    - Install following packages
+      #+BEGIN_EXAMPLE
+      $ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+      #+END_EXAMPLE
+    - Use the following command to setup the stable repository.
+      #+BEGIN_EXAMPLE
+      $ sudo yum-config-manager \
+      --add-repo \
+      https://download.docker.com/linux/centos/docker-ce.repo
+      #+END_EXAMPLE
+      #+BEGIN_EXAMPLE
+      yum makecache fast
+      yum install docker-ce -y
+      service docker start
+      #+END_EXAMPLE
+*** Reference 
+    - https://docs.docker.com/engine/installation/linux/docker-ce/centos/#install-using-the-repository
