@@ -46,5 +46,18 @@
       yum install docker-ce -y
       service docker start
       #+END_EXAMPLE
+*** Set proxy in docker configurationfile
+    https://docs.docker.com/engine/admin/systemd/#httphttps-proxy
+
+* Pull the imgaes from defualt dockerhub
+  - CentOS and httpd
+    #+BEGIN_EXAMPLE
+    docker pull centos
+    docker pull httpd
+    #+END_EXAMPLE
+* Install git
+  #+BEGIN_EXAMPLE
+  yum  install git -y
+  #+END_EXAMPLE
 *** Reference 
     - https://docs.docker.com/engine/installation/linux/docker-ce/centos/#install-using-the-repository
