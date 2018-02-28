@@ -1,0 +1,5 @@
+$TTL 1200
+@ SOA   ns.docker.virtual-labs.ac.in. engg.virtual-labs.ac.in. (2017081001 15m 5m 30d 2h)
+        NS ns.virtual-labs.ac.in.
+        ;IN      A       54.85.93.7
+        IN      A   	13.56.35.86
