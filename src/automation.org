@@ -1,0 +1,27 @@
+#+Title: Automation of VLABS infrastructure using ansible and Docker
+#+Author: Siva Shanker
+
+* Introduction
+  This document contains the scripts to automate the infrastruture
+  using Ansible and docker.
+* Implementation
+** Install Ansible
+** Install Docker
+** HTTPD docker container
+*** Dockerfile
+*** VirtualHosts
+** Configure DNS server on host machine
+*** Iptables 
+    #+BEGIN_SRC 
+    iptables -I INPUT -p tcp --dport 53 -j ACCEPT
+    iptables -I INPUT -p udp --dport 53 -j ACCEPT
+    
+    #+END_SRC
+** Lauch lab docker containers
+*** Create Dockerfile
+*** Create Image
+*** Run images/labs with proper domains
+*** Start apache2 service from host
+    docker exec lab-name /usr/sbin/apachectl -k start
+** Configure httpd service with virtualhost for the domain
+
